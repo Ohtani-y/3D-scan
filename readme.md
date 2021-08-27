@@ -35,3 +35,16 @@ filters→smoothing, fairing and deformation→depth smooth
 filters→smoothing, fairing and deformation→laplacian smooth
 
 
+
+
+
+OpenViewの操作
+![Openview](Openview.bmp)
+
+![OpenVino2](OpenVino2.bmp)
+
+MeshLabの操作
+
+![MeshLab](MeshLab.bmp)
+
+![MeshLab2](MeshLab2.bmp)
