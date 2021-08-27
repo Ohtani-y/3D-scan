@@ -22,6 +22,16 @@ HMでのサーフェス作成方法は　geom→surface→from FEでエレメン
 |step|サーフェスを作成すれば可能|可能|
 |x_t|サーフェスを作成すれば可能|可能（他と比べサーフェス形状がいびつだったように思う）|
 
-### ③meshlabスムージング機能
-・filters→smoothing, fairing and deformation→depth smooth
+### ③meshlabのメッシュ改善機能
+
+・外れ値の除去機能
+filters→cleaning and repairing→remove isolated pieces(wrt diameter)
+パラメータ：enter max diameter of isolated pieces(abs and %)（独立したメッシュ群の直径がパラメータ以下の場合削除する。）
+filters→cleaning and repairing→remove isolated pieces(wrt face num.)
+パラメータ：enter minimum conn. comp size（独立したメッシュ群の要素数がパラメータ以下の場合削除する。）
+
+・スムージング機能
+filters→smoothing, fairing and deformation→depth smooth
+filters→smoothing, fairing and deformation→laplacian smooth
+
 
