@@ -22,19 +22,35 @@ HMでのサーフェス作成方法は　geom→surface→from FEでエレメン
 |step|サーフェスを作成すれば可能|可能|
 |x_t|サーフェスを作成すれば可能|可能（他と比べサーフェス形状がいびつだったように思う）|
 
-### ③meshlabのメッシュ改善機能
+### ③meshlabの機能
 
 ・外れ値の除去機能
 filters→cleaning and repairing→remove isolated pieces(wrt diameter)
-パラメータ：enter max diameter of isolated pieces(abs and %)（独立したメッシュ群の直径がパラメータ以下の場合削除する。）
 filters→cleaning and reairing→remove isolated pieces(wrt face num.)
-パラメータ：enter minimum conn. comp size（独立したメッシュ群の要素数がパラメータ以下の場合削除する。）
+
+|機能|パラメータ|効果|
+|--|--|--|
+|remove isolated pieces(wrt diameter)|enter max diameter of isolated pieces(abs and %)|独立したメッシュ群の直径がパラメータ以下の場合削除する。|
+|remove isolated pieces(wrt face num.)|enter minimum conn. comp size|独立したメッシュ群の要素数がパラメータ以下の場合削除する。|
 
 ・スムージング機能
 filters→smoothing, fairing and deformation→depth smooth
 filters→smoothing, fairing and deformation→laplacian smooth
 
+・meshlabの背景を白にする
+tool→options
+|Variable Name|Variable Value（初期値）|Variable Value（変更後）|
+|--|--|--|
+|Meshlab::Appearance::backgroundBotColor|#8080ff|#ffffff|
+|Meshlab::Appearance::backgroundTopColor|#000000|#ffffff|
 
+・meshlab計測データのゼロ点補正
+filter→normals, curvatures and orientation→transform:translate, center, set origin ???
+
+・meshlab計測データのｍｍスケールへの変更
+filter→normals, curvatures and orientation→transform:scale, normalize
+
+・meshlab寸法計測の表示改善と記録方法
 
 
 
