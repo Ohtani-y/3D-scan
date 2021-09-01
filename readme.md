@@ -36,8 +36,23 @@ HMでのサーフェス作成方法は　geom→surface→from FEでエレメン
 |remove isolated pieces(wrt face num.)|enter minimum conn. comp size|独立したメッシュ群の要素数がパラメータ以下の場合削除する。|
 
 #### ・スムージング
-filters→smoothing, fairing and deformation→depth smooth
-filters→smoothing, fairing and deformation→laplacian smooth
+
+
+手順：filters→smoothing, fairing and deformation→①
+
+|①|機能|パラメータ|効果|
+|--|--|--|--|
+|depth smooth|頂点の移動が1方向（デフォルトでは視点方向）に制約されたスムージング|smoothing steps|アルゴリズム実行回数|
+|||viewpoint|視点の変更|
+|||strength|スムーズの強度|
+|HC laplacian smooth||||
+|laplacian smooth||||
+|laplacian smooth(surface preserving)||||
+|smooth face nomals||||
+|smooth vertex quality||||
+|taubin smooth||||
+|two step smooth||||
+
 
 #### ・背景を白にする
 下記の手順でglobal parameter windowを立ち上げ、下表のVariable Nameに対応するVariable Valueの枠をダブルクリックする。
