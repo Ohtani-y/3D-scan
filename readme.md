@@ -45,13 +45,19 @@ HMでのサーフェス作成方法は　geom→surface→from FEでエレメン
 |depth smooth|頂点の移動が1方向（デフォルトでは視点方向）に制約されたスムージング|smoothing steps|アルゴリズム実行回数|
 |||viewpoint|視点の変更|
 |||strength|スムーズの強度|
-|HC laplacian smooth||||
-|laplacian smooth||||
-|laplacian smooth(surface preserving)||||
-|smooth face nomals||||
-|smooth vertex quality||||
-|taubin smooth||||
-|two step smooth||||
+|HC laplacian smooth|下記記事に基づくラプラシアンスムージングの拡張バージョン。 vollmer、mencl、mullerによるノイズの多い表面メッシュの改良されたラプラシアンスムージング。<br /> EUROGRAPHICS volume 18（1999）、number 3、131-138|-||
+|laplacian smooth|隣接する頂点の重み付き位置を使用して、各頂点位置を平均する。|smoothing steps|アルゴリズム実行回数|
+|laplacian smooth(surface preserving)|限られた表面修正でのラプラシアンスムージング新しい位置がほぼ元の表面上にある場合にのみ、隣接する頂点の平均位置に各頂点を移動する|max nomal dev (deg)|古い面から新しい面への最大平均法線変位（deg）|
+|||iterations|スムージングの反復回数|
+|smooth face nomals|頂点の位置に触れない面の法線のラプラシアンスムーズ|-||
+|smooth vertex quality|測定データにvertex qualityが含まれていないとエラーが発生し使用できなかった|-||
+|taubin smooth|λ-μ taubin平滑化は、反復ごとに2つのローパスフィルタリングのステップを組み合わせる。|lambda|taubin法のλパラメータ|
+|||mu|taubin法のμパラメータ|
+|||smoothing steps|アルゴリズム実行回数|
+|two step smooth|下記2段階に基づくフェアリングフィルターの保存/強化機能<br />・法線スムージング。類似の法線が平均化される。<br />・頂点の再配置。新しい法線に合うように頂点が移動される。|smoothing steps|アルゴリズム実行回数<br />下記noamal smoothing stepsおよびvertex fitting stepsを何セット行うか|
+|||feature angle threshold|指定されたしきい値よりも大きい角度を形成するフィーチャは保持される|
+|||normal smoothing steps|法線スムージングの試行回数|
+|||vertex fitting steps|頂点再配置の試行回数|
 
 
 #### ・背景を白にする
